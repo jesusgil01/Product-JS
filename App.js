@@ -62,6 +62,10 @@ document.getElementById('product-form')
         const product = new Product(name, price, year);
         const ui = new UI();
 
+        if (name === '' || price === '' || year === '') {
+            return ui.showMessage('Complete Fields Please', 'danger');
+        }
+
         ui.addProduct(product);
 
         e.preventDefault();
